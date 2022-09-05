@@ -1,51 +1,61 @@
-# gapi-script
-[![Generic badge](https://img.shields.io/badge/License-MIT-blue.svg)](https://shields.io/) | [![Generic badge](https://img.shields.io/badge/version-1.0.0-red.svg)](https://shields.io/)
-## 💡 Intro
+# gatsby-gapi
 
-Since there is no official package and not even an updated package to load the gapi functions for us, this package make this possible. You can either call `loadGapiInsideDOM` to load the gapi-script inside a `<script>` tag on your browser. Or use the static gapi value that was copied from [google api platform](https://apis.google.com/js/platform.js), pasted to this project and exported as `gapi`.
+## 🛸 Intro
+npm package that loads gapi script and initialize some functions.which supports server-side-rendering in gatsby.
 
-## 🚀 Usage
+There is a package which loads the gapi functions for us `gapi-script` , this package uses modified code of `gapi-script` make build possible in gatsby with google login. You can either call `loadGapiInsideDOM` to load the gatsby-gapi inside a `<script>` tag on your browser. Or use the static gapi value that was copied from [google api platform](https://apis.google.com/js/platform.js), pasted to this project and exported as `gapi`.
+
+## 👨‍🔧 How to use
 Add the package to your project:
 
-```javascript
-// npm
-npm install --save gapi-script
+```
+npm install gatsby-gapi
 
+//or
 
-// yarn
-yarn add gapi-script
+yarn add gatsby-gapi
 ```
 
-You can load gapi with two different approaches
+You can load gapi with following approach
 1 - import `gapi` where you need it:
 ```javascript
-import { gapi } from 'gapi-script';
+import { gapi } from 'gatsby-gapi';
 ```
 
-2 - import `gapi` and called somewhere in your app:
-```javascript
-import { loadGapiInsideDOM } from 'gapi-script';
-const gapi = await loadGapiInsideDOM();
+2 - import `gapi`  in your react app:
+```javascript 
+
+useEffect(() => {
+    function start() {
+      gapi.client.init({
+        clientId: "client-id",
+        scope: 'email',
+      });
+    }
+
+    gapi.load('client:auth2', start);
+  }, []);
+
+
 ```
-**After gapi loaded using the 2 approach you can access it on `window.gapi` anywhere in your app**
+### After loading gatsby-gapi you can access as  `window.gapi` in your component
 
 Once you have gapi you can use it in other functions to make your life easier
 
 If you need to use `gapi auth2` the package already has a function to initialize it:
 
 ```javascript
-import { loadAuth2, loadAuth2WithProps, loadClientAuth2 } from 'gapi-script';
+import { loadAuth2, loadAuth2WithProps, loadClientAuth2 } from 'gatsby-gapi';
 
-let auth2 = await loadAuth2(gapi, clientId, scopes);
+let a2 = await loadAuth2(gapi, clientId, scopes);
 
 // or if you need to use more props from gapi you can use this method:
-let auth2 = await loadAuth2WithProps(gapi, { /* object with props from gapi */ });
+let a2 = await loadAuth2WithProps(gapi, { /* object with props from gapi */ });
 
 // if you want to use the gapi client itself
-let gapiClient = loadClientAuth2(gapi, clientId, scopes);
+let gClient = loadClientAuth2(gapi, clientId, scopes);
 ```
 
-## 📦 Contribution
-If you want to contribute just open an issue and send your PR with a good description about it.
+# 🎁 How to contribute
 
-**OBS**: the gapi code is copied from this link [google api platform](https://apis.google.com/js/platform.js), and can become outdated any time. I'll dedicate myself to keep it updated always, but if you see any error with gapi load, please open an issue to report about it
+Can make pull requst with a good description about feature or bug fix.

@@ -1,10 +1,6 @@
 # gapi-script
-[![Generic badge](https://img.shields.io/badge/License-MIT-blue.svg)](https://shields.io/) | [![Generic badge](https://img.shields.io/badge/version-1.1.0-red.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/License-MIT-blue.svg)](https://shields.io/) | [![Generic badge](https://img.shields.io/badge/version-1.0.0-red.svg)](https://shields.io/)
 ## 💡 Intro
-npm package that loads gapi script and initialize some functions.
-
- - [React live example](https://google-gapi-login.herokuapp.com)
- - [React live example project](https://github.com/LucasAndrad/gapi-script-live-example)
 
 Since there is no official package and not even an updated package to load the gapi functions for us, this package make this possible. You can either call `loadGapiInsideDOM` to load the gapi-script inside a `<script>` tag on your browser. Or use the static gapi value that was copied from [google api platform](https://apis.google.com/js/platform.js), pasted to this project and exported as `gapi`.
 

@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-gapi",
+  "name": "gatsby-gapi-ssr",
   "version": "1.0.0",
   "description": "Able to Enable gapi in server-side rendering in gatsby",
   "main": "index.js",

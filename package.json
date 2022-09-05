@@ -1,14 +1,14 @@
 {
   "name": "gatsby-gapi",
   "version": "1.0.0",
-  "description": "package to load gapi script and some functions",
+  "description": "Able to Enable gapi in server-side rendering in gatsby",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/partnerhero/gapi-script.git"
+    "url": "git+https://github.com/A-Scode/gatsby-gapi.git"
   },
   "keywords": [
     "google",
@@ -19,12 +19,12 @@
     "gapi-auth",
     "google-sign-in"
   ],
-  "author": "Lucas Andrade Oliveira",
+  "author": "A-Scode",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/partnerhero/gapi-script/issues"
+    "url": "https://github.com/A-Scode/gatsby-gapi/issues"
   },
-  "homepage": "https://github.com/partnerhero/gapi-script#readme",
+  "homepage": "https://github.com/A-Scode/gatsby-gapi#readme",
   "types": "./index.d.ts",
   "devDependencies": {
     "@types/gapi.auth2": "^0.0.53"
